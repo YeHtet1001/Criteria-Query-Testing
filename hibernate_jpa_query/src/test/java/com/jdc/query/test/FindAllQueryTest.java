@@ -21,8 +21,6 @@ public class FindAllQueryTest extends JpaEmfFactory {
 	@Order(2)
 	void findWithJpalQueryTest() {
 		
-		
-		
 		var query = em.createQuery("select e from Employee e",Employee.class);
 		
 		System.out.println( query.getResultList() );
