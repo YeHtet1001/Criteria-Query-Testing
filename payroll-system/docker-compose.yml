@@ -1,0 +1,16 @@
+volumes:
+  payroll-volume:
+
+services:
+  db:
+    image: mysql:latest
+    container_name: payroll_container
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=payrollUser
+      - MYSQL_PASSWORD=payrollPass
+      - MYSQL_DATABASE=payrollDb
+    ports:
+      - "3306:3306"
+    volumes:
+      - payroll-volume:/var/lib/mysql
